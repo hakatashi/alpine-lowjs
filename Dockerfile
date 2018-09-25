@@ -9,6 +9,12 @@ RUN apk add libgcc libstdc++ py2-yaml python2 libtool perl automake autoconf npm
 	cd deps/duktape && \
 	git checkout -- && \
 	cd ../.. && \
+	cd deps/c-ares && \
+	git checkout -- && \
+	cd ../.. && \
+	cd deps/mbedtls && \
+	git checkout -- && \
+	cd ../.. && \
 	make && \
 	cp lib/* /lib -r && \
 	cp bin/* /bin -r && \
