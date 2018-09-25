@@ -5,7 +5,7 @@ RUN apk add libgcc libstdc++ py2-yaml python2 libtool perl automake autoconf npm
 	cd /tmp && \
 	git clone https://github.com/neonious/lowjs.git --depth 1 && \
 	cd lowjs && \
-	git submodule update --init --depth 1 --recursive && \
+	(git submodule update --init --depth 1 --recursive || echo "Ignoring submodule update failure") && \
 	cd deps/duktape && \
 	git checkout -- && \
 	cd ../.. && \
